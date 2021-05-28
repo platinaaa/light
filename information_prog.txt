@@ -1,0 +1,14 @@
+    // Класс С Выводом Окна С Информацией После Нажатия На Кнопку
+
+    Class Information_Prog Implements Actionlistener
+    {
+        Public Void Actionperformed(Actionevent E)
+        {
+            String Message = ""; // Строка Для Информации
+            Message += "Герасюк Богдан \N" + "Тема Практики: \N" +"Ювелирная Мастерская"; // Добавления Информации В Строку
+            Joptionpane.Showmessagedialog(Null, Message, "Окно Информации", Joptionpane.Plain_Message); // Демонтстрация Окна С Информацией
+        }
+    }
+    //
+
+ 

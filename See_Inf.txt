@@ -1,0 +1,19 @@
+   // Класс С Выводом Окна С Информацией После Нажатия На Кнопку
+    Class See_Inf Implements Actionlistener
+    {
+
+        Public Void Actionperformed (Actionevent E)
+        {
+            String Message = ""; // Строка Для Информации
+            Message += "Ниже Будет Выведен Товар, Который Вы Ищете \N" ; // Добавления Информации В Строку
+            Message += "Введённый Товар - " + Pole_Vvoda.Gettext()+ "\Nкольцо Из Золота С Бриллиантом И Керамической Вставкой - Цена - 9 230 ₽ Количество - 0 "  ; // Добавления Информации В Строку
+            Joptionpane.Showmessagedialog(Null, Message, "Вывод Запроса", Joptionpane.Plain_Message); // Демонтстрация Окна С Информацией
+        }
+
+    }
+    //
+
+
+
+
+}

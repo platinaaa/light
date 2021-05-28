@@ -1,0 +1,48 @@
+Package Interf;
+Import Javax.Swing.*;
+Import Java.Awt.*;
+Import Java.Awt.Event.*;
+
+Public Class Inter_Face Extends Jframe
+{
+
+    // Main Метод Для Приложения
+    Public Static Void Main(String[] Args)
+    {
+        Inter_Face App =New Inter_Face(); //Присвоение Метода Inter_Face К Переменной App
+        App.Setvisible(True); // Строка Для Включения Приложения
+    }
+    //
+
+
+    Private Jbutton Button_Spisok_Klientov = New Jbutton("Список Клиентов"); // Кнопка Просмотра Клиентов
+    Private Jbutton Button_Spisok_Tovarov = New Jbutton("Список Товаров"); // Кнопка Просмотра Товаров
+    Private Jbutton Button_Inf_Program = New Jbutton("Информация О Программе"); // Кнопка О Программе
+    Private Jbutton Button_See_Tovarov = New Jbutton("Вывести Товар"); // Кнопка Проверить
+    Private Jtextfield Pole_Vvoda = New Jtextfield("", 10); // Поле Для Ввода Текста
+    Private Jlabel Text_Pered_Polem = New Jlabel("Введите Товар Который Вы Хотите Просмотреть -\N"); // Текстовая Строка, С Подписью
+
+    Public Inter_Face ()
+    {
+        Super ("Ювелирный Магазин"); //Название Приложения
+        This.Setbounds( 100, 150, 1250, 150); // Задание Размеров Главного Окна
+        This.Setdefaultcloseoperation(Jframe.Exit_On_Close); //Оформление Окна Приложения
+
+        Container Container = This.Getcontentpane(); //Создание Контейнера
+        Container.Setlayout(New Gridlayout(3,2,2,2));
+        Container.Add(Text_Pered_Polem); // Контерйнер С Текстом Внутри, Используется Для Расположения
+        Container.Add(Pole_Vvoda); // Контейнер С Полем Для Ввода Текста
+
+
+        Button_See_Tovarov.Addactionlistener(New See_Inf()); // Проверка Кнопки На Нажатие
+        Container.Add(Button_See_Tovarov);
+
+        Button_Inf_Program.Addactionlistener(New Information_Prog()); // Проверка Кнопки На Нажатие
+        Container.Add(Button_Inf_Program);
+
+        Button_Spisok_Tovarov.Addactionlistener(New Spisok_Ykrasheni()); // Проверка Кнопки На Нажатие
+        Container.Add(Button_Spisok_Tovarov);
+
+        Button_Spisok_Klientov.Addactionlistener(New Pokypatel()); // Проверка Кнопки На Нажатие
+        Container.Add(Button_Spisok_Klientov);
+    }
